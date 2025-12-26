@@ -130,6 +130,8 @@ def make_audio(text, output_file, sample_file, language='en', speed=1.0, max_cha
     Returns:
         bool: True on success, False on error.
     """
+
+    output_file = os.path.expanduser(output_file)
     
     # 1. Split the text into chunks respecting word boundaries
     chunks = split_text_into_chunks(text, max_chars)
